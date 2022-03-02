@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "name": "jia",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap && npm run prepare",
+    "build": "npx lerna run build --parallel",
+    "prepare": "husky install"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "workspaces": [
+    "packages/demo"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jia000/action-test.git"
+  },
+  "devDependencies": {
+    "husky": "^7.0.0",
+    "lerna": "^4.0.0",
+    "lint-staged": "^11.0.1",
+    "prettier": "^2.3.1"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint --fix",
+    "*.scss": "prettier --write"
+  }
+}
