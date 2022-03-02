@@ -1,5 +1,10 @@
 name: publish
 
+on:
+  push:
+    branches:
+      - master
+
 permissions:
   contents: write # for checkout and tag
   pull-requests: write  # for comments
