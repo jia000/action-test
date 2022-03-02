@@ -25,11 +25,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install
-        run: npm install
+        run: |
+          npm install lerna -g
+          npm install
 
       - name: Publish
         run: |
-          npm lerna publish from-package --yes
+          lerna publish from-package --yes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
