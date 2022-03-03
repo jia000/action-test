@@ -31,7 +31,7 @@ jobs:
 
       - name: Publish
         run: |
-          lerna publish from-package --yes --legacy-auth ${{ secrets.NPM_TOKEN  }}
+          lerna publish from-package --yes --legacy-auth ${{ secrets.NPM_TOKEN  }} --no-verify-access
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
